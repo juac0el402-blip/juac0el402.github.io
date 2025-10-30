@@ -1,168 +1,382 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- METADATOS SEO - APARECERÁS EN GOOGLE -->
-    <title>Joaquin Enrique Ojeda Villafuerte - Licenciado en Ciencias de la Computación</title>
-    <meta name="description" content="Joaquin Enrique Ojeda Villafuerte - Estudiante de Ciencias de la Computación en Universidad Católica San Pablo. Especializado en desarrollo web y programación.">
-    <meta name="keywords" content="Joaquin Ojeda, Joaquin Enrique Ojeda Villafuerte, Ciencias de la Computación, Desarrollador Web, Programación, UCSP">
-    <meta name="author" content="Joaquin Enrique Ojeda Villafuerte">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Joaquin Enrique Ojeda Villafuerte - Licenciado en Ciencias de la Computación">
-    <meta property="og:description" content="Portafolio profesional de Joaquin Enrique Ojeda Villafuerte">
-    <meta property="og:type" content="website">
-    
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Joaquin Enrique Ojeda Villafuerte",
-      "jobTitle": "Estudiante de Ciencias de la Computación",
-      "alumniOf": "Universidad Católica San Pablo",
-      "url": "https://tusuario.github.io",
-      "sameAs": [
-        "https://instagram.com/joaq.ojedaa",
-        "https://youtube.com/@atler_smith4882"
-      ]
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --azul-pastel: #A7C7E7;
+    --azul-medio: #7FB3D5;
+    --naranja-pastel: #F8C8A8;
+    --naranja-suave: #F5B78E;
+    --texto-oscuro: #2C3E50;
+    --blanco: #FFFFFF;
+    --fondo-claro: #F8F9FA;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--texto-oscuro);
+    background: linear-gradient(135deg, var(--fondo-claro) 0%, var(--azul-pastel) 100%);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(127, 179, 213, 0.1);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--azul-medio);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--texto-oscuro);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--naranja-suave);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--azul-pastel) 0%, var(--naranja-pastel) 100%);
+    color: var(--texto-oscuro);
+    padding: 140px 0 80px;
+    margin-top: 60px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.highlight {
+    color: var(--azul-medio);
+    background: linear-gradient(135deg, var(--azul-medio), var(--naranja-suave));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--texto-oscuro);
+    opacity: 0.9;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 14px 32px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn.primary {
+    background: var(--naranja-suave);
+    color: var(--texto-oscuro);
+    box-shadow: 0 4px 15px rgba(245, 183, 142, 0.3);
+}
+
+.btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(245, 183, 142, 0.4);
+}
+
+.btn.secondary {
+    background: transparent;
+    color: var(--texto-oscuro);
+    border: 2px solid var(--texto-oscuro);
+}
+
+.btn.secondary:hover {
+    background: var(--texto-oscuro);
+    color: var(--blanco);
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+}
+
+section:nth-child(even) {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--azul-medio);
+}
+
+/* About Section */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text h3 {
+    color: var(--naranja-suave);
+    margin: 2rem 0 1rem;
+    font-size: 1.3rem;
+}
+
+.about-text ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.about-text li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.about-text li:before {
+    content: "▸";
+    color: var(--azul-medio);
+    position: absolute;
+    left: 0;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    background: var(--blanco);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(127, 179, 213, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+}
+
+.skill-category h3 {
+    color: var(--naranja-suave);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.skill-category ul {
+    list-style: none;
+}
+
+.skill-category li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--azul-pastel);
+}
+
+.skill-category li:last-child {
+    border-bottom: none;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--blanco);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(127, 179, 213, 0.1);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(127, 179, 213, 0.2);
+}
+
+.project-card h3 {
+    color: var(--azul-medio);
+    margin-bottom: 1rem;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--naranja-suave);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--azul-medio);
+}
+
+/* Contact Section */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.social-links h3 {
+    margin-bottom: 1rem;
+    color: var(--azul-medio);
+}
+
+.social-btn {
+    display: block;
+    padding: 12px 20px;
+    margin: 0.5rem 0;
+    background: var(--azul-pastel);
+    color: var(--texto-oscuro);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.social-btn:hover {
+    background: var(--azul-medio);
+    color: var(--blanco);
+    transform: translateX(5px);
+}
+
+.social-btn.instagram:hover {
+    background: linear-gradient(45deg, #E1306C, #F77737);
+}
+
+.social-btn.youtube:hover {
+    background: #FF0000;
+}
+
+.social-btn.linkedin:hover {
+    background: #0077B5;
+}
+
+/* Footer */
+footer {
+    background: var(--texto-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
-    </script>
     
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="container">
-                <h1 class="logo">Joaquin Ojeda</h1>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#sobre-mi">Sobre Mí</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <section id="inicio" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Hola, soy <span class="highlight">Joaquin Enrique Ojeda Villafuerte</span></h1>
-                <h2>Estudiante de Licenciatura en Ciencias de la Computación</h2>
-                <p>Desarrollo diferentes tipos de lenguaje de programación y creación de páginas web innovadoras</p>
-                <div class="cta-buttons">
-                    <a href="#contacto" class="btn primary">Contáctame</a>
-                    <a href="#proyectos" class="btn secondary">Ver Proyectos</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="images/foto-perfil.jpg" alt="Joaquin Enrique Ojeda Villafuerte - Estudiante de Ciencias de la Computación" loading="lazy">
-            </div>
-        </div>
-    </section>
-
-    <section id="sobre-mi" class="about">
-        <div class="container">
-            <h2>Sobre Mí</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Soy <strong>Joaquin Enrique Ojeda Villafuerte</strong>, estudiante de <strong>Ciencias de la Computación</strong> en la <strong>Universidad Católica San Pablo</strong>. Me apasiona el desarrollo de software y la creación de soluciones tecnológicas innovadoras.</p>
-                    
-                    <h3>Formación Académica</h3>
-                    <ul>
-                        <li><strong>Licenciatura en Ciencias de la Computación</strong> - Universidad Católica San Pablo (En curso)</li>
-                    </ul>
-                    
-                    <h3>Experiencia Laboral</h3>
-                    <ul>
-                        <li><strong>Desarrollador Web Junior</strong> - Proyectos académicos y personales (2023 - Presente)</li>
-                        <li><strong>Asistente en Desarrollo de Software</strong> - Prácticas universitarias (2023)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="habilidades" class="skills">
-        <div class="container">
-            <h2>Habilidades Técnicas</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Lenguajes de Programación</h3>
-                    <ul>
-                        <li>HTML/CSS</li>
-                        <li>C++</li>
-                        <li>Python</li>
-                        <li>C</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Diseño y Herramientas</h3>
-                    <ul>
-                        <li>Photoshop</li>
-                        <li>Diseño Gráfico</li>
-                        <li>Desarrollo Web</li>
-                        <li>Resolución de Problemas</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="proyectos" class="projects">
-        <div class="container">
-            <h2>Proyectos Académicos</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Sistema de Gestión Universitaria</h3>
-                    <p>Desarrollo de un sistema web para gestión académica usando HTML, CSS y JavaScript.</p>
-                    <a href="#" class="project-link">Ver código</a>
-                </div>
-                <div class="project-card">
-                    <h3>Algoritmos en C++</h3>
-                    <p>Implementación de algoritmos de ordenamiento y estructuras de datos en C++.</p>
-                    <a href="#" class="project-link">Ver código</a>
-                </div>
-                <div class="project-card">
-                    <h3>Análisis de Datos con Python</h3>
-                    <p>Proyecto de análisis de datasets utilizando pandas y matplotlib.</p>
-                    <a href="#" class="project-link">Ver código</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="contact">
-        <div class="container">
-            <h2>Contacto</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p><strong>Email:</strong> joaquin.ojeda.villafuerte@gmail.com</p>
-                    <p><strong>Institución:</strong> Universidad Católica San Pablo</p>
-                    <p><strong>Ubicación:</strong> Arequipa, Perú</p>
-                </div>
-                <div class="social-links">
-                    <h3>Sígueme en:</h3>
-                    <a href="https://www.instagram.com/joaq.ojedaa/" target="_blank" class="social-btn instagram">Instagram</a>
-                    <a href="https://www.youtube.com/@atler_smith4882" target="_blank" class="social-btn youtube">YouTube</a>
-                    <a href="#" class="social-btn linkedin">LinkedIn (Próximamente)</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Joaquin Enrique Ojeda Villafuerte. Todos los derechos reservados.</p>
-            <p>Estudiante de Ciencias de la Computación - Universidad Católica San Pablo</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 200px;
+    }
+}
