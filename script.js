@@ -1,6 +1,5 @@
-// script.js - Efectos simples
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scroll para los links del menú
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -10,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Efecto de aparición suave al hacer scroll
+    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observar las secciones
+    
     document.querySelectorAll('section').forEach(section => {
         section.style.opacity = '0';
         section.style.transform = 'translateY(20px)';
